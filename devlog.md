@@ -1,6 +1,7 @@
+
 ---
 layout: default
-title: Development Log
+title: Weekly Development Log
 permalink: /devlog/
 ---
 
@@ -8,33 +9,42 @@ permalink: /devlog/
   <section class="page">
 
     <div class="eyebrow">THE DEVELOPMENT JOURNEY</div>
-    <h1>Development <span class="highlight">Log.</span></h1>
+
+    <h1>Weekly <span class="highlight">Updates.</span></h1>
 
     <p class="intro">
-      A chronological record of the development process.
-      Ideas, experiments, progress, unexpected problems
-      and everything learned along the way.
+      A week-by-week record of the development process.
+      Every update captures what I worked on, what I added,
+      what worked, what didn't and what comes next.
     </p>
 
-    <h2>Latest Entries</h2>
+    <h2>Development Timeline</h2>
 
     {% for post in site.posts %}
 
       <a href="{{ post.url | relative_url }}" class="post-card">
+
         <div class="post-date">
-          {{ post.date | date: "%B %d, %Y" }}
+          {{ post.week | default: "WEEKLY UPDATE" }}
+          · {{ post.period }}
         </div>
 
         <h3>{{ post.title }}</h3>
+
         <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
-        <span class="highlight">READ ENTRY →</span>
+
+        <span class="highlight">READ WEEKLY UPDATE →</span>
+
       </a>
 
     {% else %}
 
       <div class="empty-state">
         <h3>The journey starts here.</h3>
-        <p>The first development entries are coming soon.</p>
+        <p>
+          The first weekly development update
+          will be published soon.
+        </p>
       </div>
 
     {% endfor %}
