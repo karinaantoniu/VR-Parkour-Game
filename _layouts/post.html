@@ -1,3 +1,4 @@
+
 ---
 layout: default
 ---
@@ -6,30 +7,28 @@ layout: default
   <article class="page article-content">
 
     <div class="eyebrow">
-      DEVELOPMENT JOURNAL
+      WEEKLY DEVELOPMENT JOURNAL
     </div>
 
     <div class="post-date">
-      {{ page.date | date: "%B %d, %Y" }}
+      {{ page.week }} · {{ page.period }}
     </div>
 
     <h1>{{ page.title }}</h1>
 
-    {% if page.categories %}
-      <p>
-        <span class="highlight">
-          {{ page.categories | join: " · " }}
-        </span>
-      </p>
-    {% endif %}
+    <p class="intro">
+      {{ page.description }}
+    </p>
 
     <hr style="border: 1px solid #30243b; margin: 30px 0;">
 
     {{ content }}
 
-    <p>
-      <a href="{{ '/devlog/' | relative_url }}">← BACK TO DEVELOPMENT LOG</a>
-    </p>
+    <hr style="border: 1px solid #30243b; margin: 35px 0;">
+
+    <a href="{{ '/devlog/' | relative_url }}">
+      ← BACK TO WEEKLY UPDATES
+    </a>
 
   </article>
 </div>
